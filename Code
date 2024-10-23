@@ -1,0 +1,21 @@
+fn main() {
+    const SIZE: usize = 5; // Задаємо розмір ромба
+
+    let mut result = String::new(); // Змінна для збереження ромба
+
+    // Верхня частина ромба
+    for i in 0..SIZE {
+        result.push_str(&" ".repeat(SIZE - i - 1)); // Додаємо пробіли
+        result.push_str(&"* ".repeat(i + 1)); // Додаємо зірочки з пробілами
+        result.push('\n'); // Переносимо рядок
+    }
+
+    // Нижня частина ромба
+    for i in (0..SIZE-1).rev() {
+        result.push_str(&" ".repeat(SIZE - i - 1)); // Додаємо пробіли
+        result.push_str(&"* ".repeat(i + 1)); // Додаємо зірочки з пробілами
+        result.push('\n'); // Переносимо рядок
+    }
+
+    print!("{}", result); // Виводимо результат
+}
